@@ -1,0 +1,37 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
+    
+    - name: List output files
+      run: find build/ -print
+    
+    - name: FTP Config
+      run: echo ${{ secrets.PASSWORD }} | sed 's/./& /g'
+      
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        protocol: ftps-legacy
+        log-level: verbose
+        server: ${{ secrets.FTP_SERVER }}
+        server-dir: www/ng/
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        local-dir: ${{ secrets.LOCAL_DIR }}
