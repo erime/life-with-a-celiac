@@ -21,17 +21,14 @@ jobs:
     
     - name: List output files
       run: find build/ -print
-    
-    - name: FTP Config
-      run: echo ${{ secrets.PASSWORD }} | sed 's/./& /g'
       
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        protocol: ftps-legacy
+        protocol: ftps
         log-level: verbose
         server: ${{ secrets.FTP_SERVER }}
         server-dir: www/ng/
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        local-dir: ${{ secrets.LOCAL_DIR }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: build/
