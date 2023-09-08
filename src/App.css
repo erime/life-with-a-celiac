@@ -1,9 +1,16 @@
 .App {
   text-align: center;
+  font-family: Oxygen-Regular;
+}
+
+.posts {
+  width: 88.89%;
+  max-width: 1280px;
+  margin:auto;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20px;
   pointer-events: none;
 }
 
@@ -15,17 +22,21 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 20px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.App-title {
+  font-family: IndieFlower-Regular, Arial, serif;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +46,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'IndieFlower-Regular';
+  src: local('IndieFlower-Regular'), url(./fonts/IndieFlower-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Oxygen-Regular';
+  src: local('Oxygen-Regular'), url(./fonts/Oxygen-Regular.ttf) format('truetype');
 }
