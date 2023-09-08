@@ -2,7 +2,25 @@
     
 }
 
+.featured_image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
 .title {
     font-family: IndieFlower-Regular, Arial, serif;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.wp_content {
+text-align: left;
+}
+
+.wp_content h4 {
+    font-family: IndieFlower-Regular, Arial, serif;
 }

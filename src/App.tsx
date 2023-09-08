@@ -20,6 +20,9 @@ export interface IPost {
     rendered: string
   };
   link: string;
+  content: {
+    rendered: string;
+  }
   slug: string;
   _embedded: {
     "wp:featuredmedia": [{
@@ -32,6 +35,9 @@ export interface IPost {
             source_url: string;
           }
           large: {
+            source_url: string;
+          }
+          "1536x1536": {
             source_url: string;
           }
         }

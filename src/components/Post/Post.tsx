@@ -31,6 +31,10 @@ export function Post(props: IMyProps) {
       }
 
     return <div className={s.container}>
+        { activePost && <img className={s.featured_image} src={activePost._embedded["wp:featuredmedia"][0].media_details.sizes["1536x1536"].source_url} /> }
         <h1 className={s.title}>{activePost && activePost.title.rendered}</h1>
+        <div className={s.wp_content}>
+            { activePost && <div dangerouslySetInnerHTML={{__html: activePost.content.rendered}}></div> }
+        </div>
     </div>
 }
