@@ -6,7 +6,7 @@
 .posts {
   width: 88.89%;
   max-width: 1280px;
-  margin:auto;
+  margin: auto;
 }
 
 .App-logo {
@@ -25,9 +25,9 @@
   text-align: left;
   color: white;
   margin-left: 0;
-    margin-right: 0;
+  margin-right: 0;
   margin-bottom: 20px;
-  position:relative;
+  position: relative;
   z-index: 99;
 }
 
@@ -52,12 +52,14 @@
 
 @font-face {
   font-family: 'IndieFlower-Regular';
-  src: local('IndieFlower-Regular'), url(./fonts/IndieFlower-Regular.ttf) format('truetype');
+  src: local('IndieFlower-Regular'),
+    url(./fonts/IndieFlower-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Oxygen-Regular';
-  src: local('Oxygen-Regular'), url(./fonts/Oxygen-Regular.ttf) format('truetype');
+  src: local('Oxygen-Regular'),
+    url(./fonts/Oxygen-Regular.ttf) format('truetype');
 }
 
 /* WordPress Styles for injected HTML */

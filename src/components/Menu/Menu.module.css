@@ -1,33 +1,33 @@
 .menu_container {
-    display: flex;
-    justify-content: right;
+  display: flex;
+  justify-content: right;
 }
 
 .menu_item {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .menu_item_title {
-    margin: 5px;
-    display: inline-block;
-    width: 100%;
-    cursor: default;
+  margin: 5px;
+  display: inline-block;
+  width: 100%;
+  cursor: default;
 }
 
-ul {
-    background-color: black;
+.menu_container ul {
+  background-color: black;
   position: absolute;
   padding: 10px;
   right: 0;
 }
 
-li {
-    cursor: pointer;
-    list-style-type: none;
-    white-space: nowrap;
+.menu_container li {
+  cursor: pointer;
+  list-style-type: none;
+  white-space: nowrap;
 }
 
-li:hover {
-    background-color: darkslategray;
+.menu_container li:hover {
+  background-color: darkslategray;
 }

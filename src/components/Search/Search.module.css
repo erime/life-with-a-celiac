@@ -1,20 +1,20 @@
 .magnify_icon {
-    position: absolute;
-    left: 15px;
-    top: 8px;
+  position: absolute;
+  left: 15px;
+  top: 8px;
 }
 
 .search_box {
-margin: 5px;
-padding-left: 35px;
-border-radius: 20px;
-background-color: black;
-color: white;
-width: 100%;
+  margin: 5px;
+  padding-left: 35px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  width: 100%;
 }
 
 .search_container {
-    display: flex;
-    justify-content: right;
-    position: relative;
+  display: flex;
+  justify-content: right;
+  position: relative;
 }

@@ -1,6 +1,5 @@
 import { IPost } from "../../App";
 import { PostListItem } from "../PostListItem/PostListItem";
-import s from "./PostList.module.css"
 
 interface IMyProps {
     posts: Array<IPost>;
