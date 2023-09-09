@@ -82,9 +82,9 @@ function App() {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    getPosts();
-    getMenus();
-  }, []);
+    loadPosts();
+    loadMenus();
+  });
 
   const onPostClick = (id: number) => {
     console.log('====onPostClick', id);
@@ -98,18 +98,18 @@ function App() {
 
   const onMenuClick = (url: string, menuType: string, objectId: string) => {
     console.log('====onMenuClick', url, menuType, objectId);
-    menuType === 'category' && getCategoryPosts(objectId);
+    menuType === 'category' && loadCategoryPosts(objectId);
     const route = url?.replace('https://www.erime.eu', '/ng');
     route && navigate(route);
   };
 
   const onSearch = (searchString: string) => {
     console.log('====onSearch', searchString);
-    getSearchPosts(searchString);
+    loadSearchPosts(searchString);
     navigate(`/ng/language/en/?s=${searchString}`);
   };
 
-  async function getPosts() {
+  async function loadPosts() {
     try {
       const response = await axios.get(
         'https://www.erime.eu/wp-json/wp/v2/posts?_embed'
@@ -122,7 +122,7 @@ function App() {
     }
   }
 
-  async function getCategoryPosts(categoryId: string) {
+  async function loadCategoryPosts(categoryId: string) {
     try {
       const response = await axios.get(
         `https://www.erime.eu/wp-json/wp/v2/posts?_embed&categories=${categoryId}`
@@ -135,7 +135,7 @@ function App() {
     }
   }
 
-  async function getSearchPosts(searchString: string) {
+  async function loadSearchPosts(searchString: string) {
     try {
       const response = await axios.get(
         `https://www.erime.eu/wp-json/wp/v2/posts?_embed&search=${searchString}`
@@ -148,7 +148,7 @@ function App() {
     }
   }
 
-  async function getMenus() {
+  async function loadMenus() {
     try {
       const response = await axios.get(
         'https://www.erime.eu/wp-json/menus/v1/menus/menu_en'
@@ -183,7 +183,7 @@ function App() {
               <div className='col-3 col-md-1 col-lg-2 social'>
                 <a
                   href='https://www.instagram.com/life_with_a_celiac/'
-                  target='_blank'
+                  target='_blank' rel="noreferrer"
                 >
                   🦋
                 </a>
