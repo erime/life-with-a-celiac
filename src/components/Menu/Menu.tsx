@@ -1,6 +1,6 @@
-import s from './Menu.module.css';
-import { IMenuItem } from '../../App';
 import { useState } from 'react';
+import { IMenuItem } from '../../App';
+import s from './Menu.module.css';
 
 interface IMyProps {
   menuItems: Array<IMenuItem>;
@@ -24,19 +24,21 @@ export function Menu(props: IMyProps) {
 
   return (
     <div className={s.menu_container}>
-      {props.menuItems.map((menuItem) => {
+      {props.menuItems.map((menuItem, index) => {
         return (
           <div
+            key={`menuItem_${menuItem.object_id}`}
             className={s.menu_item}
             onMouseEnter={() => mouseEnter(menuItem.ID)}
             onMouseLeave={() => mouseLeave()}
           >
-            <div className={s.menu_item_title}>{menuItem.title}</div>
+            <button className={s.menu_item_title}>{menuItem.title}</button>
             {menuVisible === menuItem.ID && (
               <ul>
                 {menuItem.child_items.map((subMenuItem) => {
                   return (
                     <li
+                      key={`subMenuItem_${subMenuItem.object_id}`}
                       value={subMenuItem.url}
                       onClick={() =>
                         onClick(

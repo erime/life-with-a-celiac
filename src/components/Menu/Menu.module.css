@@ -1,6 +1,8 @@
 .menu_container {
   display: flex;
   justify-content: right;
+  align-items: center;
+  height: 100%;
 }
 
 .menu_item {
@@ -13,6 +15,9 @@
   display: inline-block;
   width: 100%;
   cursor: default;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
 }
 
 .menu_container ul {
@@ -20,6 +25,8 @@
   position: absolute;
   padding: 10px;
   right: 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .menu_container li {

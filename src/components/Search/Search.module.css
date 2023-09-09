@@ -1,12 +1,14 @@
 .magnify_icon {
+  display: flex;
   position: absolute;
-  left: 15px;
-  top: 8px;
+  left: 10px;
+  height: 100%;
+  align-items: center;
 }
 
 .search_box {
-  margin: 5px;
-  padding-left: 35px;
+  margin: 5px 0 5px 0;
+  padding-left: 32px;
   border-radius: 20px;
   background-color: black;
   color: white;
@@ -17,4 +19,6 @@
   display: flex;
   justify-content: right;
   position: relative;
+  align-items: center;
+  height: 100%;
 }

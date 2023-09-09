@@ -1,14 +1,10 @@
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import './App.css';
-import logo from './logo.svg';
-
-// Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
-// Bootstrap Bundle JS
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Route, Routes, useNavigate } from 'react-router-dom';
+import './App.css';
 import { Menu } from './components/Menu/Menu';
 import { Post } from './components/Post/Post';
 import { PostList } from './components/PostList/PostList';
@@ -76,6 +72,10 @@ function App() {
   ReactGA.initialize(GA_TRACKING_ID);
 
   const [posts, setPosts] = useState<Array<IPost>>([]);
+  const [totalPostCount, setTotalPostCount] = useState<number | undefined>(
+    undefined
+  );
+  const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
   const [menu, setMenu] = useState<Array<IMenuItem>>([]);
 
   const navigate = useNavigate();
@@ -91,6 +91,7 @@ function App() {
     const post = posts.find((post) => {
       return post.id === id;
     });
+    setTotals(undefined);
     const route = post?.link.replace('https://www.erime.eu', '/ng');
     route && navigate(route);
   };
@@ -115,6 +116,7 @@ function App() {
       );
       console.log(response);
       setPosts(response.data);
+      setTotals(response);
     } catch (error) {
       console.error(error);
     }
@@ -127,6 +129,7 @@ function App() {
       );
       console.log(response);
       setPosts(response.data);
+      setTotals(response);
     } catch (error) {
       console.error(error);
     }
@@ -139,6 +142,7 @@ function App() {
       );
       console.log(response);
       setPosts(response.data);
+      setTotals(response);
     } catch (error) {
       console.error(error);
     }
@@ -156,26 +160,45 @@ function App() {
     }
   }
 
+  const setTotals = (response: any) => {
+    setTotalPostCount(!!response ? +response.headers['x-wp-total'] : undefined);
+    setTotalPages(
+      !!response ? +response.headers['x-wp-totalpages'] : undefined
+    );
+  };
+
   return (
     <div className='App'>
-      <header className='App-header row'>
-        <div className='col-md-6'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <span className='App-title'>Life With a Celiac</span>
-        </div>
-        <div className='col-md-6'>
-          <div className='row'>
-            <div className='col-4'>social 🎉</div>
-            <div className={`col-8`}>
-              <Search onSearch={onSearch} />
-            </div>
-            <div className={'col-12'}>
-              <Menu menuItems={menu} onClickItem={onMenuClick} />
+      <header className='App-header'>
+        <div className='page_column'>
+          <div>
+            <div className='row no_margin'>
+              <div
+                className='col-9 col-md-7 col-lg-4 pointer'
+                onClick={() => navigate(`/ng`)}
+              >
+                <div className='App-logo'>🍪</div>
+                <div className='App-title'>Life With a Celiac</div>
+              </div>
+              <div className='col-3 col-md-1 col-lg-2 social'>
+                <a
+                  href='https://www.instagram.com/life_with_a_celiac/'
+                  target='_blank'
+                >
+                  🦋
+                </a>
+              </div>
+              <div className={`col-5 col-md-4 col-lg-3`}>
+                <Search onSearch={onSearch} />
+              </div>
+              <div className={'col-7 col-md-12 col-lg-3'}>
+                <Menu menuItems={menu} onClickItem={onMenuClick} />
+              </div>
             </div>
           </div>
         </div>
       </header>
-      <div className='posts'>
+      <div className='page_column'>
         <Routes>
           <Route
             path='/ng'
@@ -193,7 +216,11 @@ function App() {
           />
         </Routes>
       </div>
-      <footer>🎉 footer</footer>
+      <footer>
+        {totalPages &&
+          totalPostCount &&
+          `🎉 Total pages ${totalPages}, Total posts ${totalPostCount}`}
+      </footer>
     </div>
   );
 }
