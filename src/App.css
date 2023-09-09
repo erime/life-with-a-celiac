@@ -22,13 +22,13 @@
 
 .App-header {
   background-color: #282c34;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
+  text-align: left;
   color: white;
+  margin-left: 0;
+    margin-right: 0;
   margin-bottom: 20px;
+  position:relative;
+  z-index: 99;
 }
 
 .App-link {
@@ -37,6 +37,8 @@
 
 .App-title {
   font-family: IndieFlower-Regular, Arial, serif;
+  font-size: 25px;
+  margin-top: 5px;
 }
 
 @keyframes App-logo-spin {
@@ -56,4 +58,9 @@
 @font-face {
   font-family: 'Oxygen-Regular';
   src: local('Oxygen-Regular'), url(./fonts/Oxygen-Regular.ttf) format('truetype');
+}
+
+/* WordPress Styles for injected HTML */
+.wp p.has-small-font-size {
+  font-size: 13px !important;
 }

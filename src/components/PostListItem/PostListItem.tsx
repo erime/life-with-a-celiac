@@ -16,9 +16,11 @@ export function PostListItem(props: IMyProps) {
     const onClick = () => {
         props.onClick(props.post.id);
     }
+    const featureImageUrl = props.post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.medium_large?.source_url ||
+    props.post._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url;
     return <div className={`${s.container} row ${props.align === 0 ? s.direction_reverse : ''}`} onClick={onClick}>
         <div className={`${s.image_container} col-md-6`}>
-        <img src={props.post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url}></img>
+        {featureImageUrl && <img src={featureImageUrl}></img>}
         </div>
         <div className={`${s.description} col-md-6`}>
             <div>{date}</div>

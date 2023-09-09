@@ -18,7 +18,7 @@ export function Post(props: IMyProps) {
 
     useEffect(() => {
         slug && getPost(slug);
-      }, [])
+      }, [props])
 
     async function getPost(slug: string) {
         try {
@@ -30,11 +30,13 @@ export function Post(props: IMyProps) {
         }
       }
 
+      const featureImageUrl = activePost?._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes["1536x1536"]?.source_url ||
+      activePost?._embedded["wp:featuredmedia"]?.[0]?.media_details?.sizes?.full?.source_url;
     return <div className={s.container}>
-        { activePost && <img className={s.featured_image} src={activePost._embedded["wp:featuredmedia"][0].media_details.sizes["1536x1536"].source_url} /> }
+        { featureImageUrl && <img className={s.featured_image} src={featureImageUrl} /> }
         <h1 className={s.title}>{activePost && activePost.title.rendered}</h1>
         <div className={s.wp_content}>
-            { activePost && <div dangerouslySetInnerHTML={{__html: activePost.content.rendered}}></div> }
+            { activePost &&<div className="wp" dangerouslySetInnerHTML={{__html: activePost.content.rendered}}></div> }
         </div>
     </div>
 }
