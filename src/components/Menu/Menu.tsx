@@ -10,8 +10,13 @@ interface IMyProps {
 export function Menu(props: IMyProps) {
   const [menuVisible, setMenuVisible] = useState<number>();
 
-  const onClick = (url: string, menuType: string, objectId: string) => {
-    props.onClickItem(url, menuType, objectId);
+  const onClick = (
+    url: string,
+    menuType: string,
+    objectId: string,
+    slug: string
+  ) => {
+    props.onClickItem(url, menuType, objectId, slug);
   };
 
   const mouseEnter = (id: number) => {
@@ -44,7 +49,8 @@ export function Menu(props: IMyProps) {
                         onClick(
                           subMenuItem.url,
                           subMenuItem.object,
-                          subMenuItem.object_id
+                          subMenuItem.object_id,
+                          subMenuItem.slug
                         )
                       }
                     >

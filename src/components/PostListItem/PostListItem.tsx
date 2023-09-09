@@ -15,7 +15,7 @@ export function PostListItem(props: IMyProps) {
   );
 
   const onClick = () => {
-    props.onClick(props.post.id);
+    props.onClick(props.post.link, props.post.slug);
   };
   const featureImageUrl =
     props.post._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes

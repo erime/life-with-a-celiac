@@ -1,19 +1,23 @@
 import { IPost } from '../../App';
+import { PageLoader } from '../PageLoader/PageLoader';
 import { PostListItem } from '../PostListItem/PostListItem';
 
 interface IMyProps {
   posts: Array<IPost>;
   onClickItem: any;
+  loading: boolean;
 }
 
 export function PostList(props: IMyProps) {
-  const onClickItem = (id: number) => {
-    props.onClickItem(id);
+  const onClickItem = (url: string, slug: string) => {
+    props.onClickItem(url, slug);
   };
 
   return (
-    <div>
-      {props.posts &&
+    <>
+      {props.loading && <PageLoader />}
+      {!props.loading &&
+        props.posts &&
         props.posts.map((post: IPost, index: number) => {
           return (
             <PostListItem
@@ -24,6 +28,6 @@ export function PostList(props: IMyProps) {
             />
           );
         })}
-    </div>
+    </>
   );
 }

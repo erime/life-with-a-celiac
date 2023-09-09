@@ -62,6 +62,7 @@ export interface IMenuItem {
   ID: number;
   title: string;
   url: string;
+  slug: string;
   object: string; // "category", "post"
   object_id: string; // if it's category, this is the category ID
   child_items: Array<IMenuItem>;
@@ -72,11 +73,14 @@ function App() {
   ReactGA.initialize(GA_TRACKING_ID);
 
   const [posts, setPosts] = useState<Array<IPost>>([]);
+  const [activePost, setActivePost] = useState<IPost>();
   const [totalPostCount, setTotalPostCount] = useState<number | undefined>(
     undefined
   );
   const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
   const [menu, setMenu] = useState<Array<IMenuItem>>([]);
+
+  const [pageLoading, setPageLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -86,19 +90,22 @@ function App() {
     loadMenus();
   }, []);
 
-  const onPostClick = (id: number) => {
-    console.log('====onPostClick', id);
-    const post = posts.find((post) => {
-      return post.id === id;
-    });
+  const onPostClick = (url: string, slug: string) => {
     setTotals(undefined);
-    const route = post?.link.replace('https://www.erime.eu', '/ng');
+    loadPost(slug);
+    const route = url.replace('https://www.erime.eu', '/ng');
     route && navigate(route);
   };
 
-  const onMenuClick = (url: string, menuType: string, objectId: string) => {
-    console.log('====onMenuClick', url, menuType, objectId);
+  const onMenuClick = (
+    url: string,
+    menuType: string,
+    objectId: string,
+    slug: string
+  ) => {
+    console.log('====onMenuClick', url, menuType, objectId, slug);
     menuType === 'category' && loadCategoryPosts(objectId);
+    menuType !== 'category' && onPostClick(url, slug);
     const route = url?.replace('https://www.erime.eu', '/ng');
     route && navigate(route);
   };
@@ -111,40 +118,47 @@ function App() {
 
   async function loadPosts() {
     try {
+      setPageLoading(true);
       const response = await axios.get(
         'https://www.erime.eu/wp-json/wp/v2/posts?_embed'
       );
-      console.log(response);
       setPosts(response.data);
       setTotals(response);
+      setPageLoading(false);
     } catch (error) {
       console.error(error);
+    } finally {
+      setPageLoading(false);
     }
   }
 
   async function loadCategoryPosts(categoryId: string) {
     try {
+      setPageLoading(true);
       const response = await axios.get(
         `https://www.erime.eu/wp-json/wp/v2/posts?_embed&categories=${categoryId}`
       );
-      console.log(response);
       setPosts(response.data);
       setTotals(response);
     } catch (error) {
       console.error(error);
+    } finally {
+      setPageLoading(false);
     }
   }
 
   async function loadSearchPosts(searchString: string) {
     try {
+      setPageLoading(true);
       const response = await axios.get(
         `https://www.erime.eu/wp-json/wp/v2/posts?_embed&search=${searchString}`
       );
-      console.log(response);
       setPosts(response.data);
       setTotals(response);
     } catch (error) {
       console.error(error);
+    } finally {
+      setPageLoading(false);
     }
   }
 
@@ -157,6 +171,21 @@ function App() {
       setMenu(response.data.items);
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  async function loadPost(slug: string) {
+    try {
+      setPageLoading(true);
+      const response = await axios.get(
+        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&slug=${slug}`
+      );
+      console.log(response);
+      setActivePost(response.data.length > 0 ? response.data[0] : undefined);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setPageLoading(false);
     }
   }
 
@@ -175,7 +204,10 @@ function App() {
             <div className='row no_margin'>
               <div
                 className='col-9 col-md-7 col-lg-4 pointer'
-                onClick={() => navigate(`/ng`)}
+                onClick={() => {
+                  navigate(`/ng`);
+                  loadPosts();
+                }}
               >
                 <div className='App-logo'>🍪</div>
                 <div className='App-title'>Life With a Celiac</div>
@@ -203,17 +235,41 @@ function App() {
         <Routes>
           <Route
             path='/ng'
-            element={<PostList posts={posts} onClickItem={onPostClick} />}
+            element={
+              <PostList
+                posts={posts}
+                loading={pageLoading}
+                onClickItem={onPostClick}
+              />
+            }
           />
-          <Route path='/ng/language/en/recipes/*' element={<Post />} />
-          <Route path='/ng/language/en/destinations/*' element={<Post />} />
+          <Route
+            path='/ng/language/en/recipes/*'
+            element={<Post post={activePost} loading={pageLoading} />}
+          />
+          <Route
+            path='/ng/language/en/destinations/*'
+            element={<Post post={activePost} loading={pageLoading} />}
+          />
           <Route
             path='/ng/language/en/category/*'
-            element={<PostList posts={posts} onClickItem={onPostClick} />}
+            element={
+              <PostList
+                posts={posts}
+                loading={pageLoading}
+                onClickItem={onPostClick}
+              />
+            }
           />
           <Route
             path='/ng/language/en/*'
-            element={<PostList posts={posts} onClickItem={onPostClick} />}
+            element={
+              <PostList
+                posts={posts}
+                loading={pageLoading}
+                onClickItem={onPostClick}
+              />
+            }
           />
         </Routes>
       </div>
