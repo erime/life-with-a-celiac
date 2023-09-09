@@ -8,6 +8,8 @@
   cursor: pointer;
   opacity: 0.7;
   transition: 0.2s opacity ease-in-out;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .container:hover {
@@ -21,8 +23,8 @@
 .image_container {
   height: 300px;
   overflow: hidden;
-  padding-left: 0;
-  padding-right: 0;
+  /* padding-left: 0;
+  padding-right: 0; */
 }
 
 .image_container img {
