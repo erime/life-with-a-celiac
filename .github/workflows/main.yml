@@ -9,26 +9,26 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    # - name: Use Node.js 14
-    #   uses: actions/setup-node@v2
-    #   with:
-    #     node-version: '14'
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
       
-    # - name: 🔨 Build Project
-    #   run: |
-    #     npm install
-    #     npm run build
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
     
-    # - name: List output files
-    #   run: find build/ -print
+    - name: List output files
+      run: find build/ -print
       
-    # - name: 📂 Sync files
-    #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-    #   with:
-    #     protocol: ftps
-    #     log-level: verbose
-    #     server: ${{ secrets.FTP_SERVER }}
-    #     server-dir: www/ng/
-    #     username: ${{ secrets.FTP_USERNAME }}
-    #     password: ${{ secrets.FTP_PASSWORD }}
-    #     local-dir: build/
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        protocol: ftps
+        log-level: verbose
+        server: ${{ secrets.FTP_SERVER }}
+        server-dir: www/ng/
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: build/
