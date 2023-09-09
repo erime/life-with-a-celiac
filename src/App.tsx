@@ -84,7 +84,7 @@ function App() {
     ReactGA.pageview(window.location.pathname + window.location.search);
     loadPosts();
     loadMenus();
-  });
+  }, []);
 
   const onPostClick = (id: number) => {
     console.log('====onPostClick', id);
@@ -183,7 +183,8 @@ function App() {
               <div className='col-3 col-md-1 col-lg-2 social'>
                 <a
                   href='https://www.instagram.com/life_with_a_celiac/'
-                  target='_blank' rel="noreferrer"
+                  target='_blank'
+                  rel='noreferrer'
                 >
                   🦋
                 </a>

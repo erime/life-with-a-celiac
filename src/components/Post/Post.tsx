@@ -12,9 +12,9 @@ export function Post(props: IMyProps) {
 
   useEffect(() => {
     const slug = window.location.href
-    .split('/')
-    .filter((elem) => elem?.length > 0)
-    .pop();
+      .split('/')
+      .filter((elem) => elem?.length > 0)
+      .pop();
 
     slug && getPost(slug);
   }, [props]);
@@ -40,7 +40,11 @@ export function Post(props: IMyProps) {
   return (
     <div className={s.container}>
       {featureImageUrl && (
-        <img className={s.featured_image} src={featureImageUrl} alt={activePost.title.rendered}/>
+        <img
+          className={s.featured_image}
+          src={featureImageUrl}
+          alt={activePost.title.rendered}
+        />
       )}
       <h1 className={s.title}>{activePost && activePost.title.rendered}</h1>
       <div className={s.wp_content}>
