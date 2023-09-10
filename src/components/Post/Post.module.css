@@ -22,9 +22,14 @@
 }
 
 .wp_content h4,
-h2 {
+.wp_content h2 {
   font-family: IndieFlower-Regular, Arial, serif;
   font-weight: bolder;
+}
+
+.wp_content img {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 .wp_content figure {
@@ -38,9 +43,5 @@ h2 {
   line-height: 1.5;
   margin: 6px 0 0 0;
   color: #8c8c8c;
-  text-align: center;
-  caption-side: bottom;
-  display: table-caption;
   font-size: 0.813em;
-  max-width: calc(100% - 48px);
 }
