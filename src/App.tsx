@@ -1,11 +1,12 @@
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Menu } from './components/Menu/Menu';
+import { PageNav } from './components/PageNav/PageNav';
 import { Post } from './components/Post/Post';
 import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
@@ -68,6 +69,20 @@ export interface IMenuItem {
   child_items: Array<IMenuItem>;
 }
 
+enum PageType {
+  POST = 'post',
+  POST_LIST = 'post_list',
+  CATEGORY = 'category',
+  SEARCH = 'search'
+}
+
+interface ILoadResult {
+  currentPageType: PageType;
+  categoryId?: string;
+  searchString?: string;
+  currentPageNumber: number;
+}
+
 function App() {
   const GA_TRACKING_ID = 'G-LVVQ1G3RR2';
   ReactGA.initialize(GA_TRACKING_ID);
@@ -77,6 +92,9 @@ function App() {
   const [totalPostCount, setTotalPostCount] = useState<number | undefined>(
     undefined
   );
+  const [loadResult, setLoadResult] = useState<ILoadResult | undefined>(
+    undefined
+  );
   const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
   const [menu, setMenu] = useState<Array<IMenuItem>>([]);
 
@@ -84,11 +102,32 @@ function App() {
 
   const navigate = useNavigate();
 
+  const loadPosts = useCallback(async (page?: number) => {
+    try {
+      const usedPage = page ? page : 1;
+      setPageLoading(true);
+      const response = await axios.get(
+        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&page=${usedPage}`
+      );
+      setPosts(response.data);
+      setLoadResult({
+        currentPageType: PageType.POST_LIST,
+        currentPageNumber: usedPage
+      });
+      setTotals(response);
+      setPageLoading(false);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setPageLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     loadPosts();
     loadMenus();
-  }, []);
+  }, [loadPosts]);
 
   const onPostClick = (url: string, slug: string) => {
     setTotals(undefined);
@@ -110,21 +149,44 @@ function App() {
     route && navigate(route);
   };
 
-  const onSearch = (searchString: string) => {
+  const onSearch = (searchString: string, page?: number) => {
     console.log('====onSearch', searchString);
-    loadSearchPosts(searchString);
+    loadSearchPosts(searchString, page);
     navigate(`/ng/language/en/?s=${searchString}`);
   };
 
-  async function loadPosts() {
+  const onPageClicked = (page: number) => {
+    switch (loadResult?.currentPageType) {
+      case PageType.CATEGORY: {
+        loadResult.categoryId && loadCategoryPosts(loadResult.categoryId, page);
+        break;
+      }
+      case PageType.SEARCH: {
+        loadResult.searchString &&
+          loadSearchPosts(loadResult.searchString, page);
+        break;
+      }
+      case PageType.POST_LIST: {
+        loadPosts(page);
+        break;
+      }
+    }
+  };
+
+  async function loadCategoryPosts(categoryId: string, page?: number) {
     try {
+      const usedPage = page ? page : 1;
       setPageLoading(true);
       const response = await axios.get(
-        'https://www.erime.eu/wp-json/wp/v2/posts?_embed'
+        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&categories=${categoryId}&page=${usedPage}`
       );
       setPosts(response.data);
+      setLoadResult({
+        currentPageType: PageType.CATEGORY,
+        categoryId: categoryId,
+        currentPageNumber: usedPage
+      });
       setTotals(response);
-      setPageLoading(false);
     } catch (error) {
       console.error(error);
     } finally {
@@ -132,28 +194,19 @@ function App() {
     }
   }
 
-  async function loadCategoryPosts(categoryId: string) {
+  async function loadSearchPosts(searchString: string, page?: number) {
     try {
+      const usedPage = page ? page : 1;
       setPageLoading(true);
       const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&categories=${categoryId}`
+        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&search=${searchString}&page=${usedPage}`
       );
       setPosts(response.data);
-      setTotals(response);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setPageLoading(false);
-    }
-  }
-
-  async function loadSearchPosts(searchString: string) {
-    try {
-      setPageLoading(true);
-      const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&search=${searchString}`
-      );
-      setPosts(response.data);
+      setLoadResult({
+        currentPageType: PageType.SEARCH,
+        searchString: searchString,
+        currentPageNumber: usedPage
+      });
       setTotals(response);
     } catch (error) {
       console.error(error);
@@ -182,6 +235,7 @@ function App() {
       );
       console.log(response);
       setActivePost(response.data.length > 0 ? response.data[0] : undefined);
+      setLoadResult({ currentPageType: PageType.POST, currentPageNumber: 1 });
     } catch (error) {
       console.error(error);
     } finally {
@@ -274,9 +328,14 @@ function App() {
         </Routes>
       </div>
       <footer>
-        {totalPages &&
-          totalPostCount &&
-          `🎉 Total pages ${totalPages}, Total posts ${totalPostCount}`}
+        {loadResult && totalPages && totalPostCount && (
+          <PageNav
+            pageClicked={onPageClicked}
+            currentPage={loadResult.currentPageNumber}
+            totalPages={totalPages}
+            totalPostCount={totalPostCount}
+          />
+        )}
       </footer>
     </div>
   );

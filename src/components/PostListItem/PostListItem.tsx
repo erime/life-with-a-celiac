@@ -33,12 +33,9 @@ export function PostListItem(props: IMyProps) {
         {featureImageUrl && <img src={featureImageUrl} alt=''></img>}
       </div>
       <div className={`${s.description} col-md-6`}>
-        <div>{date}</div>
+        <div className={s.date}>{date}</div>
         <h1 className={s.title}>{props.post.title.rendered}</h1>
         <div>{blurb}</div>
-        <div>
-          <a href={props.post.link}>Read the post</a>
-        </div>
       </div>
     </div>
   );

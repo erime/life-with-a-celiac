@@ -20,6 +20,10 @@
   color: white;
 }
 
+.menu_item_title:hover {
+  background-color: darkslategray;
+}
+
 .menu_container ul {
   background-color: black;
   position: absolute;
