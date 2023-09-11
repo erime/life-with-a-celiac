@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { IMenuItem } from '../../App';
-import s from './Menu.module.css';
+import s from './Menu.module.scss';
 
 interface IMyProps {
   menuItems: Array<IMenuItem>;

@@ -1,4 +1,4 @@
-import s from './PageNav.module.css';
+import s from './PageNav.module.scss';
 
 interface IMyProps {
   pageClicked: any;
@@ -13,6 +13,8 @@ export function PageNav(props: IMyProps) {
       {Array.apply(0, Array(props.totalPages)).map(function (x, i) {
         return (
           <button
+            key={`nav_button_${i}`}
+            id={`nav_button_${i}`}
             className={s.nav_button}
             disabled={props.currentPage === i + 1}
             onClick={() => {

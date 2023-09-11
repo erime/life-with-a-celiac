@@ -1,3 +1,4 @@
+import { useLocation, useParams } from 'react-router-dom';
 import { IPost } from '../../App';
 import { PageLoader } from '../PageLoader/PageLoader';
 import { PostListItem } from '../PostListItem/PostListItem';
@@ -9,6 +10,16 @@ interface IMyProps {
 }
 
 export function PostList(props: IMyProps) {
+  const { lang, category } = useParams();
+  console.log('====lang', lang, category);
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  // access query parameters
+  const searchString = queryParams.get('s');
+  console.log('====searchString', searchString);
+
   const onClickItem = (url: string, slug: string) => {
     props.onClickItem(url, slug);
   };

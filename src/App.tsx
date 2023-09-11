@@ -10,6 +10,8 @@ import { PageNav } from './components/PageNav/PageNav';
 import { Post } from './components/Post/Post';
 import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
+import { Config } from './config';
+import { PostService } from './services/Posts.service';
 
 export interface IPost {
   id: number;
@@ -106,9 +108,7 @@ function App() {
     try {
       const usedPage = page ? page : 1;
       setPageLoading(true);
-      const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&page=${usedPage}`
-      );
+      const response = await PostService.loadPosts(page);
       setPosts(response.data);
       setLoadResult({
         currentPageType: PageType.POST_LIST,
@@ -132,7 +132,7 @@ function App() {
   const onPostClick = (url: string, slug: string) => {
     setTotals(undefined);
     loadPost(slug);
-    const route = url.replace('https://www.erime.eu', '/ng');
+    const route = url.replace(Config.DOMAIN_URL, '/ng');
     route && navigate(route);
   };
 
@@ -145,7 +145,7 @@ function App() {
     console.log('====onMenuClick', url, menuType, objectId, slug);
     menuType === 'category' && loadCategoryPosts(objectId);
     menuType !== 'category' && onPostClick(url, slug);
-    const route = url?.replace('https://www.erime.eu', '/ng');
+    const route = url?.replace(Config.DOMAIN_URL, '/ng');
     route && navigate(route);
   };
 
@@ -177,9 +177,7 @@ function App() {
     try {
       const usedPage = page ? page : 1;
       setPageLoading(true);
-      const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&categories=${categoryId}&page=${usedPage}`
-      );
+      const response = await PostService.loadCategoryPosts(categoryId, page);
       setPosts(response.data);
       setLoadResult({
         currentPageType: PageType.CATEGORY,
@@ -198,9 +196,7 @@ function App() {
     try {
       const usedPage = page ? page : 1;
       setPageLoading(true);
-      const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&search=${searchString}&page=${usedPage}`
-      );
+      const response = await PostService.loadSearchPosts(searchString, page);
       setPosts(response.data);
       setLoadResult({
         currentPageType: PageType.SEARCH,
@@ -230,10 +226,7 @@ function App() {
   async function loadPost(slug: string) {
     try {
       setPageLoading(true);
-      const response = await axios.get(
-        `https://www.erime.eu/wp-json/wp/v2/posts?_embed&slug=${slug}`
-      );
-      console.log(response);
+      const response = await PostService.loadPost(slug);
       setActivePost(response.data.length > 0 ? response.data[0] : undefined);
       setLoadResult({ currentPageType: PageType.POST, currentPageNumber: 1 });
     } catch (error) {
@@ -264,14 +257,10 @@ function App() {
                 }}
               >
                 <div className='App-logo'>🍪</div>
-                <div className='App-title'>Life With a Celiac</div>
+                <div className='App-title'>{Config.TITLE}</div>
               </div>
               <div className='col-3 col-md-1 col-lg-2 social'>
-                <a
-                  href='https://www.instagram.com/life_with_a_celiac/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
+                <a href={Config.INSTAGRAM_URL} target='_blank' rel='noreferrer'>
                   🦋
                 </a>
               </div>
@@ -298,15 +287,11 @@ function App() {
             }
           />
           <Route
-            path='/ng/language/en/recipes/*'
+            path='/ng/language/:lang/:mainCategory/:slug/*'
             element={<Post post={activePost} loading={pageLoading} />}
           />
           <Route
-            path='/ng/language/en/destinations/*'
-            element={<Post post={activePost} loading={pageLoading} />}
-          />
-          <Route
-            path='/ng/language/en/category/*'
+            path='/ng/language/:lang/category/recipes/diet/:category/*'
             element={
               <PostList
                 posts={posts}
@@ -316,7 +301,7 @@ function App() {
             }
           />
           <Route
-            path='/ng/language/en/*'
+            path='/ng/language/:lang/*'
             element={
               <PostList
                 posts={posts}

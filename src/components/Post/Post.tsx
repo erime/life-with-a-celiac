@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { IPost } from '../../App';
 import { PageLoader } from '../PageLoader/PageLoader';
-import s from './Post.module.css';
+import s from './Post.module.scss';
 
 interface IMyProps {
   post: IPost | undefined;
@@ -9,6 +10,9 @@ interface IMyProps {
 }
 
 export function Post(props: IMyProps) {
+  const { lang, mainCategory, slug } = useParams();
+  console.log('====lang', lang, mainCategory, slug);
+
   useEffect(() => {}, [props]);
 
   const featureImageUrl =

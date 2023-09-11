@@ -1,6 +1,6 @@
 import { decode } from 'html-entities';
 import { IPost } from '../../App';
-import s from './PostListItem.module.css';
+import s from './PostListItem.module.scss';
 
 interface IMyProps {
   post: IPost;

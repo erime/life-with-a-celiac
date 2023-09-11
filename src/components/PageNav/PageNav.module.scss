@@ -1,0 +1,16 @@
+.nav_button {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  margin: 5px;
+  min-width: 30px;
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: peru;
+  }
+
+  &:hover {
+    background-color: darkslategray;
+  }
+}

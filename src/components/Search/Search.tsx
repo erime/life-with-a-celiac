@@ -1,4 +1,4 @@
-import s from './Search.module.css';
+import s from './Search.module.scss';
 
 interface IMyProps {
   onSearch: any;
