@@ -1,6 +1,6 @@
 import p1 from '../fixtures/post1.json';
 import p2 from '../fixtures/post2.json';
-import p3 from '../fixtures/post3.json';
+import p3 from '../fixtures/post3a.json';
 import p4 from '../fixtures/post4.json';
 
 describe('template spec', () => {
