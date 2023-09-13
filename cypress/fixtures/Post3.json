@@ -1,0 +1,904 @@
+{
+  "id": 1412,
+  "date": "2022-10-02T14:00:31",
+  "date_gmt": "2022-10-02T13:00:31",
+  "guid": {
+    "rendered": "https://www.erime.eu/?p=1412"
+  },
+  "modified": "2022-10-02T14:06:18",
+  "modified_gmt": "2022-10-02T13:06:18",
+  "slug": "coconut-fonio",
+  "status": "publish",
+  "type": "post",
+  "link": "https://www.erime.eu/language/en/recipes/coconut-fonio/",
+  "title": {
+    "rendered": "Coconut Fonio (gluten free, dairy free, vegan, low FODMAP)"
+  },
+  "content": {
+    "rendered": "\n<p>Fonio is a very fine grain from West Africa. It&#8217;s so small that when soaked and strained it feels like wet sand. It&#8217;s naturally gluten free and when cooked it&#8217;s a great substitute for couscous &#8211; actually much better than quinoa.<br><br>Coconut fonio is our favorite recipe. It tastes great and can be a full meal on its own with some added protein (tofu or shredded chicken), or as a side dish to any meat or fish.</p>\n\n\n\n<p>This recipe is for 4 servings. Each serving <strong>(without tofu)</strong> is about 273 kcal (5 g protein, 44 g carbs, 6 g fat).</p>\n\n\n\n<h4 class=\"wp-block-heading\">Ingredients</h4>\n\n\n\n<p>1 cup (205 g) fonio<br><br>1 cube stock (vegetable or chicken)<br>1 cup water<br>1 cup light coconut milk<br><br>1 red bell pepper (170 g) &#8211; diced<br>30 g scallions &#8211; green parts only &#8211; chopped<br>½ tsp dried thyme<br>½ tsp turmeric<br>1 tsp salt<br>½ tsp grated ginger or ginger paste<br>1 tsp garlic infused oil<br>1 dried whole bird eye chili<br><br>280 g firm tofu &#8211; cubed (or shredded chicken)</p>\n\n\n\n<h4 class=\"wp-block-heading\">Instructions</h4>\n\n\n\n<ul><li>Rinse fonio, set aside</li><li>Make tofu</li><li>In a small pot, boil water, coconut milk and stock</li><li>Add everything except fonio (and tofu) and cook for 5 minutes</li><li>Add fonio, cook on very low, covered, for an additional 5 minutes</li><li>Remove the chilli before serving</li></ul>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Fonio &#8211; the miracle African grain is a great GF substitute for couscous.</p>\n<div class=\"more-link-wrapper\"><a class=\"more-link\" href=\"https://www.erime.eu/language/en/recipes/coconut-fonio/\">Read the post<span class=\"screen-reader-text\">Coconut Fonio (gluten free, dairy free, vegan, low FODMAP)</span></a></div>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 1415,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "_mi_skip_tracking": false,
+    "_monsterinsights_sitenote_active": false,
+    "_monsterinsights_sitenote_note": "",
+    "_monsterinsights_sitenote_category": 0,
+    "footnotes": ""
+  },
+  "categories": [501, 465, 467, 20, 473, 471],
+  "tags": [575, 525, 699, 491, 226, 168, 240, 533, 519, 234],
+  "acf": {
+    "short_title": "",
+    "ingredients": "",
+    "price": "",
+    "servings": ""
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1412"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/comments?post=1412"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 10,
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1412/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1424,
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1412/revisions/1424"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/media/1415"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/media?parent=1412"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/categories?post=1412"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/tags?post=1412"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "_embedded": {
+    "author": [
+      {
+        "id": 1,
+        "name": "Erime",
+        "url": "",
+        "description": "",
+        "link": "https://www.erime.eu/author/erimeeu/",
+        "slug": "erimeeu",
+        "avatar_urls": {
+          "24": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=24&d=mm&r=g",
+          "48": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=48&d=mm&r=g",
+          "96": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=96&d=mm&r=g"
+        },
+        "acf": [],
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/users"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "id": 1415,
+        "date": "2022-10-02T13:47:36",
+        "slug": "img_20220831_191023a_small",
+        "type": "attachment",
+        "link": "https://www.erime.eu/language/en/recipes/coconut-fonio/attachment/img_20220831_191023a_small/",
+        "title": {
+          "rendered": "Coconut Fonio"
+        },
+        "author": 1,
+        "acf": [],
+        "caption": {
+          "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image/jpeg",
+        "media_details": {
+          "width": 1860,
+          "height": 1395,
+          "file": "2022/10/IMG_20220831_191023a_small-rotated-e1664714945472.jpg",
+          "filesize": 472838,
+          "sizes": {
+            "medium": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472-300x225.jpg",
+              "width": 300,
+              "height": 225,
+              "filesize": 35347,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472-300x225.jpg"
+            },
+            "large": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472-1024x768.jpg",
+              "width": 1024,
+              "height": 768,
+              "filesize": 179043,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472-1024x768.jpg"
+            },
+            "thumbnail": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472-150x150.jpg",
+              "width": 150,
+              "height": 150,
+              "filesize": 22763,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472-150x150.jpg"
+            },
+            "medium_large": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472-768x576.jpg",
+              "width": 768,
+              "height": 576,
+              "filesize": 116866,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472-768x576.jpg"
+            },
+            "1536x1536": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472-1536x1152.jpg",
+              "width": 1536,
+              "height": 1152,
+              "filesize": 329861,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472-1536x1152.jpg"
+            },
+            "full": {
+              "file": "IMG_20220831_191023a_small-rotated-e1664714945472.jpg",
+              "width": 1860,
+              "height": 1395,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472.jpg"
+            }
+          },
+          "image_meta": {
+            "aperture": "1.65",
+            "credit": "",
+            "camera": "HD1903",
+            "caption": "",
+            "created_timestamp": "1661973024",
+            "copyright": "",
+            "focal_length": "4.755",
+            "iso": "500",
+            "shutter_speed": "0.02",
+            "title": "",
+            "orientation": 1,
+            "keywords": []
+          },
+          "original_image": "IMG_20220831_191023a_small.jpg"
+        },
+        "source_url": "https://www.erime.eu/wp-content/uploads/2022/10/IMG_20220831_191023a_small-rotated-e1664714945472.jpg",
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/media/1415"
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/media"
+            }
+          ],
+          "about": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/types/attachment"
+            }
+          ],
+          "author": [
+            {
+              "embeddable": true,
+              "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+            }
+          ],
+          "replies": [
+            {
+              "embeddable": true,
+              "href": "https://www.erime.eu/wp-json/wp/v2/comments?post=1415"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:term": [
+      [
+        {
+          "id": 501,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/dairy-free/",
+          "name": "Dairy Free",
+          "slug": "dairy-free",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/501"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=501"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=501"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 465,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/gluten-free/",
+          "name": "Gluten Free",
+          "slug": "gluten-free",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/465"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=465"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=465"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 467,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/low-fodmap/",
+          "name": "Low FODMAP",
+          "slug": "low-fodmap",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/467"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=467"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=467"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "link": "https://www.erime.eu/language/en/category/recipes/",
+          "name": "Recipes",
+          "slug": "recipes",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/20"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=20"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=20"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 473,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/vegan/",
+          "name": "Vegan",
+          "slug": "vegan",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/473"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=473"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=473"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 471,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/vegetarian/",
+          "name": "Vegetarian",
+          "slug": "vegetarian",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/471"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=471"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=471"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "id": 575,
+          "link": "https://www.erime.eu/language/en/tag/chilli-peppers/",
+          "name": "Chilli Peppers",
+          "slug": "chilli-peppers",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/575"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=575"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 525,
+          "link": "https://www.erime.eu/language/en/tag/coconut-milk/",
+          "name": "Coconut Milk",
+          "slug": "coconut-milk",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/525"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=525"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 699,
+          "link": "https://www.erime.eu/tag/fonio/",
+          "name": "Fonio",
+          "slug": "fonio",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/699"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=699"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 491,
+          "link": "https://www.erime.eu/language/en/tag/garlic-infused-oil/",
+          "name": "Garlic Infused Oil",
+          "slug": "garlic-infused-oil",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/491"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=491"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 226,
+          "link": "https://www.erime.eu/language/en/tag/ginger/",
+          "name": "Ginger",
+          "slug": "ginger",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/226"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=226"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 168,
+          "link": "https://www.erime.eu/language/en/tag/green-onions/",
+          "name": "Green Onions",
+          "slug": "green-onions",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/168"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=168"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 240,
+          "link": "https://www.erime.eu/language/en/tag/red-pepper/",
+          "name": "Red Pepper",
+          "slug": "red-pepper",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/240"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=240"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 533,
+          "link": "https://www.erime.eu/language/en/tag/tofu/",
+          "name": "Tofu",
+          "slug": "tofu",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/533"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=533"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 519,
+          "link": "https://www.erime.eu/language/en/tag/turmeric/",
+          "name": "Turmeric",
+          "slug": "turmeric",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/519"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=519"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 234,
+          "link": "https://www.erime.eu/language/en/tag/vegetable-stock/",
+          "name": "Vegetable Stock",
+          "slug": "vegetable-stock",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/234"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=234"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ]
+    ]
+  }
+}

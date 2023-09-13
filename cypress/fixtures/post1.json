@@ -1,0 +1,788 @@
+{
+  "id": 1457,
+  "date": "2023-01-02T11:51:43",
+  "date_gmt": "2023-01-02T11:51:43",
+  "guid": {
+    "rendered": "https://www.erime.eu/?p=1457"
+  },
+  "modified": "2023-09-07T23:56:58",
+  "modified_gmt": "2023-09-07T22:56:58",
+  "slug": "broccoli-chicken-salad",
+  "status": "publish",
+  "type": "post",
+  "link": "https://www.erime.eu/language/en/recipes/broccoli-chicken-salad/",
+  "title": {
+    "rendered": "Broccoli Chicken Salad (gluten free, dairy free)"
+  },
+  "content": {
+    "rendered": "\n<p>This recipe is for 4 servings. Each serving&nbsp;is about 540 kcal (48 g protein, 26 g carbs, 22 g fat).</p>\n\n\n\n<h4 class=\"wp-block-heading\">Ingredients</h4>\n\n\n\n<p>600 g chicken breast<br>Spices (nutmeg, salt, pepper)<br><br>1 tbsp rapeseed oil<br>2x broccoli (450 g) &#8211; small florets<br>220 g purple cabbage &#8211; shredded<br><br>2 tbsp miso paste<br>40 g almond butter<br>Juice from 2 oranges (150 ml)<br>20 g scallions &#8211; light green parts<br><br>70 g sultanas<br>50 g slivered almonds &#8211; toasted<br>40 g scallions &#8211; green parts</p>\n\n\n\n<h4 class=\"wp-block-heading\">Instructions</h4>\n\n\n\n<ul>\n<li>Rub chicken in spices and oil. Grill on a hot pan until cooked through. Shred.</li>\n\n\n\n<li>In the same pan saute broccoli and cabbage until slightly softened.</li>\n\n\n\n<li>Blend miso, almond butter, orange juice and light green scallions in a blender.</li>\n\n\n\n<li>Combine all</li>\n</ul>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Flavorful dish full of nutrients and minerals</p>\n<div class=\"more-link-wrapper\"><a class=\"more-link\" href=\"https://www.erime.eu/language/en/recipes/broccoli-chicken-salad/\">Read the post<span class=\"screen-reader-text\">Broccoli Chicken Salad (gluten free, dairy free)</span></a></div>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 1462,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "_mi_skip_tracking": false,
+    "_monsterinsights_sitenote_active": false,
+    "_monsterinsights_sitenote_note": "",
+    "_monsterinsights_sitenote_category": 0,
+    "footnotes": ""
+  },
+  "categories": [501, 465, 20, 457],
+  "tags": [706, 692, 244, 174, 704, 441, 702, 577, 445],
+  "acf": {
+    "short_title": "Broccoli Chicken Salad",
+    "ingredients": "<p>600 g chicken breast<br />\nSpices (nutmeg, salt, pepper)</p>\n<p>1 tbsp rapeseed oil<br />\n2x broccoli (450 g) - small florets<br />\n220 g purple cabbage - shredded</p>\n<p>2 tbsp miso paste<br />\n40 g almond butter<br />\nJuice from 2 oranges (150 ml)<br />\n20 g scallions - light green parts</p>\n<p>70 g sultanas<br />\n50 g slivered almonds - toasted<br />\n40 g scallions - green parts</p>\n",
+    "price": "",
+    "servings": "4",
+    "instructions": "Rub chicken in spices and oil. Grill on a hot pan until cooked through. Shred.\r\nIn the same pan saute broccoli and cabbage until slightly softened.\r\nBlend miso, almond butter, orange juice and light green scallions in a blender.\r\nCombine all",
+    "calories": "540",
+    "protein_g": "48",
+    "carbs_g": "26",
+    "fat_g": "22"
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1457"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/comments?post=1457"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 7,
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1457/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1478,
+        "href": "https://www.erime.eu/wp-json/wp/v2/posts/1457/revisions/1478"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/media/1462"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.erime.eu/wp-json/wp/v2/media?parent=1457"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/categories?post=1457"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://www.erime.eu/wp-json/wp/v2/tags?post=1457"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "_embedded": {
+    "author": [
+      {
+        "id": 1,
+        "name": "Erime",
+        "url": "",
+        "description": "",
+        "link": "https://www.erime.eu/author/erimeeu/",
+        "slug": "erimeeu",
+        "avatar_urls": {
+          "24": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=24&d=mm&r=g",
+          "48": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=48&d=mm&r=g",
+          "96": "https://secure.gravatar.com/avatar/55c3f42e21f42f36cf6f53eb62cb0759?s=96&d=mm&r=g"
+        },
+        "acf": [],
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/users"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "id": 1462,
+        "date": "2023-01-07T13:55:04",
+        "slug": "psx_20230106_205944a",
+        "type": "attachment",
+        "link": "https://www.erime.eu/language/en/recipes/broccoli-chicken-salad/attachment/psx_20230106_205944a/",
+        "title": {
+          "rendered": "Broccoli Chicken Salad"
+        },
+        "author": 1,
+        "acf": [],
+        "caption": {
+          "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image/jpeg",
+        "media_details": {
+          "width": 2433,
+          "height": 1217,
+          "file": "2023/01/PSX_20230106_205944a.jpg",
+          "filesize": 634890,
+          "sizes": {
+            "medium": {
+              "file": "PSX_20230106_205944a-300x150.jpg",
+              "width": 300,
+              "height": 150,
+              "filesize": 27045,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-300x150.jpg"
+            },
+            "large": {
+              "file": "PSX_20230106_205944a-1024x512.jpg",
+              "width": 1024,
+              "height": 512,
+              "filesize": 108046,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-1024x512.jpg"
+            },
+            "thumbnail": {
+              "file": "PSX_20230106_205944a-150x150.jpg",
+              "width": 150,
+              "height": 150,
+              "filesize": 23716,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-150x150.jpg"
+            },
+            "medium_large": {
+              "file": "PSX_20230106_205944a-768x384.jpg",
+              "width": 768,
+              "height": 384,
+              "filesize": 74110,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-768x384.jpg"
+            },
+            "1536x1536": {
+              "file": "PSX_20230106_205944a-1536x768.jpg",
+              "width": 1536,
+              "height": 768,
+              "filesize": 197214,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-1536x768.jpg"
+            },
+            "2048x2048": {
+              "file": "PSX_20230106_205944a-2048x1024.jpg",
+              "width": 2048,
+              "height": 1024,
+              "filesize": 319495,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a-2048x1024.jpg"
+            },
+            "full": {
+              "file": "PSX_20230106_205944a.jpg",
+              "width": 2433,
+              "height": 1217,
+              "mime_type": "image/jpeg",
+              "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a.jpg"
+            }
+          },
+          "image_meta": {
+            "aperture": "1.7",
+            "credit": "",
+            "camera": "HD1903",
+            "caption": "",
+            "created_timestamp": "1673149692",
+            "copyright": "",
+            "focal_length": "4.755",
+            "iso": "1000",
+            "shutter_speed": "0.02",
+            "title": "",
+            "orientation": "0",
+            "keywords": []
+          }
+        },
+        "source_url": "https://www.erime.eu/wp-content/uploads/2023/01/PSX_20230106_205944a.jpg",
+        "_links": {
+          "self": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/media/1462"
+            }
+          ],
+          "collection": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/media"
+            }
+          ],
+          "about": [
+            {
+              "href": "https://www.erime.eu/wp-json/wp/v2/types/attachment"
+            }
+          ],
+          "author": [
+            {
+              "embeddable": true,
+              "href": "https://www.erime.eu/wp-json/wp/v2/users/1"
+            }
+          ],
+          "replies": [
+            {
+              "embeddable": true,
+              "href": "https://www.erime.eu/wp-json/wp/v2/comments?post=1462"
+            }
+          ]
+        }
+      }
+    ],
+    "wp:term": [
+      [
+        {
+          "id": 501,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/dairy-free/",
+          "name": "Dairy Free",
+          "slug": "dairy-free",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/501"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=501"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=501"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 465,
+          "link": "https://www.erime.eu/language/en/category/recipes/diet/gluten-free/",
+          "name": "Gluten Free",
+          "slug": "gluten-free",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/465"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/469"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=465"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=465"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "link": "https://www.erime.eu/language/en/category/recipes/",
+          "name": "Recipes",
+          "slug": "recipes",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/20"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=20"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=20"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 457,
+          "link": "https://www.erime.eu/language/en/category/recipes/salads/",
+          "name": "Salads",
+          "slug": "salads",
+          "taxonomy": "category",
+          "acf": [],
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/457"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/category"
+              }
+            ],
+            "up": [
+              {
+                "embeddable": true,
+                "href": "https://www.erime.eu/wp-json/wp/v2/categories/20"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?categories=457"
+              },
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/recipe?categories=457"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "id": 706,
+          "link": "https://www.erime.eu/language/en/tag/almond-butter/",
+          "name": "Almond Butter",
+          "slug": "almond-butter",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/706"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=706"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 692,
+          "link": "https://www.erime.eu/tag/almonds/",
+          "name": "Almonds",
+          "slug": "almonds",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/692"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=692"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 244,
+          "link": "https://www.erime.eu/language/en/tag/broccoli/",
+          "name": "Broccoli",
+          "slug": "broccoli",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/244"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=244"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 174,
+          "link": "https://www.erime.eu/language/en/tag/chicken/",
+          "name": "Chicken",
+          "slug": "chicken",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/174"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=174"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 704,
+          "link": "https://www.erime.eu/language/en/tag/miso-paste/",
+          "name": "Miso Paste",
+          "slug": "miso-paste",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/704"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=704"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 441,
+          "link": "https://www.erime.eu/language/en/tag/orange/",
+          "name": "Orange",
+          "slug": "orange",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/441"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=441"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 702,
+          "link": "https://www.erime.eu/language/en/tag/purple-cabbage/",
+          "name": "Purple Cabbage",
+          "slug": "purple-cabbage",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/702"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=702"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 577,
+          "link": "https://www.erime.eu/language/en/tag/rapeseed-oil/",
+          "name": "Rapeseed Oil",
+          "slug": "rapeseed-oil",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/577"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=577"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 445,
+          "link": "https://www.erime.eu/language/en/tag/scallion/",
+          "name": "Scallion",
+          "slug": "scallion",
+          "taxonomy": "post_tag",
+          "_links": {
+            "self": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags/445"
+              }
+            ],
+            "collection": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/tags"
+              }
+            ],
+            "about": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/taxonomies/post_tag"
+              }
+            ],
+            "wp:post_type": [
+              {
+                "href": "https://www.erime.eu/wp-json/wp/v2/posts?tags=445"
+              }
+            ],
+            "curies": [
+              {
+                "name": "wp",
+                "href": "https://api.w.org/{rel}",
+                "templated": true
+              }
+            ]
+          }
+        }
+      ]
+    ]
+  }
+}
