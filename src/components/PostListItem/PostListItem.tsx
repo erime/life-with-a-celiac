@@ -5,6 +5,7 @@ import s from './PostListItem.module.scss';
 interface IMyProps {
   post: IPost;
   align: number;
+  loading: boolean;
   onClick: any;
 }
 
@@ -22,7 +23,30 @@ export function PostListItem(props: IMyProps) {
       ?.medium_large?.source_url ||
     props.post._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes?.large
       ?.source_url;
-  return (
+
+  const loadingPost = (
+    <div
+      className={`${s.container} row ${
+        props.align === 0 ? s.direction_reverse : ''
+      }`}
+    >
+      <div className={`${s.image_container} col-md-6`}>
+        <div className={s.loader_image}>&nbsp;</div>
+      </div>
+      <div className={`${s.description} col-md-6`}>
+        <div className={s.date}>
+          <div className={s.loader_date}>&nbsp;</div>
+        </div>
+        <h1 className={s.title}>
+          <div className={s.loader_title}>&nbsp;</div>
+        </h1>
+        <div className={s.blurb}>
+          <div className={s.loader_blurb}>&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  );
+  const loadedPost = (
     <div
       className={`${s.container} row ${
         props.align === 0 ? s.direction_reverse : ''
@@ -39,4 +63,5 @@ export function PostListItem(props: IMyProps) {
       </div>
     </div>
   );
+  return props.loading ? loadingPost : loadedPost;
 }

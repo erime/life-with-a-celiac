@@ -7,7 +7,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Menu } from './components/Menu/Menu';
 import { PageNav } from './components/PageNav/PageNav';
-import { Post } from './components/Post/Post';
+import { DUMMY_POST, Post } from './components/Post/Post';
 import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
 import { Config } from './config';
@@ -108,6 +108,7 @@ function App() {
     try {
       const usedPage = page ? page : 1;
       setPageLoading(true);
+      setPosts([DUMMY_POST, DUMMY_POST, DUMMY_POST]);
       const response = await PostService.loadPosts(page);
       setPosts(response.data);
       setLoadResult({

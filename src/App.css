@@ -100,8 +100,8 @@
 }
 
 footer {
-  /* position: sticky; */
-  /* bottom: 0; */
+  position: sticky;
+  bottom: 0;
   width: 100%;
   background-color: #282c34;
   margin-top: 10px;

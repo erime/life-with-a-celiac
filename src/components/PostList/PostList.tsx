@@ -1,6 +1,5 @@
 import { useLocation, useParams } from 'react-router-dom';
 import { IPost } from '../../App';
-import { PageLoader } from '../PageLoader/PageLoader';
 import { PostListItem } from '../PostListItem/PostListItem';
 
 interface IMyProps {
@@ -24,17 +23,18 @@ export function PostList(props: IMyProps) {
     props.onClickItem(url, slug);
   };
 
+  console.log('====posts', props.posts);
+
   return (
     <>
-      {props.loading && <PageLoader />}
-      {!props.loading &&
-        props.posts &&
+      {props.posts &&
         props.posts.map((post: IPost, index: number) => {
           return (
             <PostListItem
-              key={`postItem_${post.id}`}
+              key={`postItem_${post.id}_${index}`}
               post={post}
               align={index % 2}
+              loading={props.loading}
               onClick={onClickItem}
             />
           );
