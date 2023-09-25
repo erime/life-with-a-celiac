@@ -34,6 +34,7 @@ export function PostList(props: IMyProps) {
 
   useEffect(() => {
     props.loadData(lang, category, searchString, pageNum);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang, category, pageNum, searchString]);
 
   return (

@@ -63,6 +63,7 @@ export function Post(props: IMyProps) {
 
   useEffect(() => {
     slug && props.loadData(slug);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang, mainCategory, slug]);
 
   const featureImageUrl =
