@@ -6,6 +6,7 @@ import s from './Post.module.scss';
 interface IMyProps {
   post: IPost | undefined;
   loading: boolean;
+  loadData: (slug: string) => void;
 }
 
 export const DUMMY_POST: IPost = {
@@ -60,7 +61,9 @@ export function Post(props: IMyProps) {
   const { lang, mainCategory, slug } = useParams();
   console.log('====lang', lang, mainCategory, slug);
 
-  useEffect(() => {}, [props]);
+  useEffect(() => {
+    slug && props.loadData(slug);
+  }, [lang, mainCategory, slug]);
 
   const featureImageUrl =
     props.post?._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes[

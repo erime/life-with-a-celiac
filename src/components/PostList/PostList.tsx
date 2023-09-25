@@ -1,16 +1,23 @@
+import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { IPost } from '../../App';
 import { PostListItem } from '../PostListItem/PostListItem';
 
 interface IMyProps {
   posts: Array<IPost>;
-  onClickItem: any;
+  onClickItem: (url: string, slug: string) => void;
   loading: boolean;
+  loadData: (
+    lang: string | undefined,
+    category: string | undefined,
+    searchString: string | null,
+    pageNum: string | undefined
+  ) => void;
 }
 
 export function PostList(props: IMyProps) {
-  const { lang, category } = useParams();
-  console.log('====lang', lang, category);
+  const { lang, category, pageNum } = useParams();
+  console.log('====PostList', lang, category, pageNum);
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -24,6 +31,10 @@ export function PostList(props: IMyProps) {
   };
 
   console.log('====posts', props.posts);
+
+  useEffect(() => {
+    props.loadData(lang, category, searchString, pageNum);
+  }, [lang, category, pageNum, searchString]);
 
   return (
     <>

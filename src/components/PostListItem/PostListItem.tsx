@@ -6,7 +6,7 @@ interface IMyProps {
   post: IPost;
   align: number;
   loading: boolean;
-  onClick: any;
+  onClick: (url: string, slug: string) => void;
 }
 
 export function PostListItem(props: IMyProps) {
