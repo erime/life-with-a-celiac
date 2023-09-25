@@ -228,7 +228,7 @@ function App() {
       const response = await PostService.loadCategoryBySlug(slug);
       console.log('====category', response);
       response?.data?.[0]?.id &&
-        loadCategoryPosts(response?.data?.[0]?.id, page);
+        loadCategoryPosts(response?.data?.[0]?.id, usedPage);
     } catch (error) {
       console.error(error);
       setPageLoading(false);
