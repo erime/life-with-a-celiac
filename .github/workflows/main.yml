@@ -60,6 +60,9 @@ jobs:
       - name: 📜 List output files
         run: find build/ -print
 
+      - name: 📡 Deploy GitHub
+        run: npm run deploy
+
       - name: 📡 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
