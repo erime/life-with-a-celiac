@@ -88,7 +88,10 @@ jobs:
         run: find build/ -print
 
       - name: 📡 Deploy GitHub
-        run: npm run deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 
       - name: 📡 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
