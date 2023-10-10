@@ -349,6 +349,17 @@ function App() {
       <div className='page_column'>
         <Routes>
           <Route
+            path='/'
+            element={
+              <PostList
+                posts={posts}
+                loading={pageLoading}
+                onClickItem={onPostClick}
+                loadData={onPostListLoad}
+              />
+            }
+          />
+          <Route
             path='/ng'
             element={
               <PostList

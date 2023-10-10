@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "cypress": "npx cypress open"
   },
-  "homepage": ".",
+  "homepage": "./ng",
   "eslintConfig": {
     "extends": [
       "react-app",
