@@ -150,6 +150,7 @@ function App() {
   const onPostLoad = (slug: string) => {
     setTotals(undefined);
     loadPost(slug);
+    window.scrollTo(0, 0);
   };
 
   const onPostListLoad = (
@@ -176,6 +177,7 @@ function App() {
       return;
     }
     loadPosts(pageNum ? +pageNum : undefined);
+    window.scrollTo(0, 0);
   };
 
   const onMenuClick = (

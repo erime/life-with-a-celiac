@@ -34,7 +34,7 @@
     "eject": "react-scripts eject",
     "cypress": "npx cypress open"
   },
-  "homepage": "./ng",
+  "homepage": "http://www.erime.eu/ng",
   "eslintConfig": {
     "extends": [
       "react-app",
