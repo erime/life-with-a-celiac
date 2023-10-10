@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./ng/static/css/main.327a1466.css",
-    "main.js": "./ng/static/js/main.d313243f.js",
-    "static/js/787.2ac5bc4e.chunk.js": "./ng/static/js/787.2ac5bc4e.chunk.js",
-    "static/media/IndieFlower-Regular.ttf": "./ng/static/media/IndieFlower-Regular.599d26584b9afc1d20b1.ttf",
-    "static/media/Oxygen-Regular.ttf": "./ng/static/media/Oxygen-Regular.56e5848476493abbd93e.ttf",
-    "index.html": "./ng/index.html",
-    "main.327a1466.css.map": "./ng/static/css/main.327a1466.css.map",
-    "main.d313243f.js.map": "./ng/static/js/main.d313243f.js.map",
-    "787.2ac5bc4e.chunk.js.map": "./ng/static/js/787.2ac5bc4e.chunk.js.map"
+    "main.css": "/ng/static/css/main.e89eb1bd.css",
+    "main.js": "/ng/static/js/main.38af5755.js",
+    "static/js/787.2ac5bc4e.chunk.js": "/ng/static/js/787.2ac5bc4e.chunk.js",
+    "static/media/IndieFlower-Regular.ttf": "/ng/static/media/IndieFlower-Regular.599d26584b9afc1d20b1.ttf",
+    "static/media/Oxygen-Regular.ttf": "/ng/static/media/Oxygen-Regular.56e5848476493abbd93e.ttf",
+    "index.html": "/ng/index.html",
+    "main.e89eb1bd.css.map": "/ng/static/css/main.e89eb1bd.css.map",
+    "main.38af5755.js.map": "/ng/static/js/main.38af5755.js.map",
+    "787.2ac5bc4e.chunk.js.map": "/ng/static/js/787.2ac5bc4e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.327a1466.css",
-    "static/js/main.d313243f.js"
+    "static/css/main.e89eb1bd.css",
+    "static/js/main.38af5755.js"
   ]
 }
