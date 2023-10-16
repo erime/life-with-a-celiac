@@ -12,7 +12,11 @@ export function Search(props: IMyProps) {
   return (
     <div className={s.search_container}>
       <span className={s.magnify_icon}>🔍</span>
-      <input className={s.search_box} onKeyUp={searchSubmit}></input>
+      <input
+        className={s.search_box}
+        onKeyUp={searchSubmit}
+        aria-label='Search'
+      ></input>
     </div>
   );
 }

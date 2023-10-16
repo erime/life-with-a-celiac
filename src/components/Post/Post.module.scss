@@ -48,14 +48,10 @@
     text-align: left;
 
     h4,
+    h3,
     h2 {
       font-family: IndieFlower-Regular, Arial, serif;
       font-weight: bolder;
-    }
-
-    img {
-      max-width: 100% !important;
-      height: auto !important;
     }
 
     figure {
@@ -63,12 +59,17 @@
       display: table;
       margin: auto;
       clear: both;
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
     }
 
     figcaption {
       line-height: 1.5;
       margin: 6px 0 0 0;
-      color: #8c8c8c;
+      color: #595959;
       font-size: 0.813em;
     }
   }

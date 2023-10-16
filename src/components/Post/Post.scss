@@ -1,0 +1,47 @@
+.wp-block-image .is-style-rounded img,
+.wp-block-image.is-style-circle-mask img,
+.wp-block-image.is-style-rounded img {
+  border-radius: 9999px;
+}
+
+.wprm-container-float-right {
+  float: right;
+  margin: 0 0 10px 10px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wprm-recipe-template-blend-in-name-stars-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 150px;
+  align-items: center;
+}
+
+.wprm-block-text-faded {
+  opacity: 0.7;
+}
+
+.wprm-block-text-bold {
+  font-weight: bold !important;
+}
+
+.wprm-block-text-normal {
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+}
+
+.wprm-recipe-details-container-inline {
+  display: inline;
+}
+
+.wprm-recipe-block-container-inline {
+  display: inline-block;
+  margin-right: 1.2em;
+}
+
+.wprm-recipe-template-blend-in .wprm-recipe-header {
+  margin-top: 1.2em !important;
+}

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { IPost } from '../../App';
 import s from './Post.module.scss';
+import './Post.scss';
 
 interface IMyProps {
   post: IPost | undefined;
