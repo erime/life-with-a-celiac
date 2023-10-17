@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
+import { useDispatch } from 'react-redux';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Menu } from './components/Menu/Menu';
@@ -12,6 +13,7 @@ import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
 import { Config } from './config';
 import { PostService } from './services/Posts.service';
+import { loadResult as dispatchLoadResult } from './store/postSlice';
 
 export interface IPost {
   id: number;
@@ -71,14 +73,14 @@ export interface IMenuItem {
   child_items: Array<IMenuItem>;
 }
 
-enum PageType {
+export enum PageType {
   POST = 'post',
   POST_LIST = 'post_list',
   CATEGORY = 'category',
   SEARCH = 'search'
 }
 
-interface ILoadResult {
+export interface ILoadResult {
   currentPageType: PageType;
   categoryId?: string;
   searchString?: string;
@@ -103,6 +105,7 @@ function App() {
   const [pageLoading, setPageLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const loadPosts = useCallback(async (page?: number) => {
     try {
@@ -115,6 +118,12 @@ function App() {
         currentPageType: PageType.POST_LIST,
         currentPageNumber: usedPage
       });
+      dispatch(
+        dispatchLoadResult({
+          currentPageType: PageType.POST_LIST,
+          currentPageNumber: usedPage
+        })
+      );
       setTotals(response);
       setPageLoading(false);
     } catch (error) {
