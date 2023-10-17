@@ -107,31 +107,34 @@ function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const loadPosts = useCallback(async (page?: number) => {
-    try {
-      const usedPage = page ? page : 1;
-      setPageLoading(true);
-      setPosts([DUMMY_POST, DUMMY_POST, DUMMY_POST]);
-      const response = await PostService.loadPosts(page);
-      setPosts(response.data);
-      setLoadResult({
-        currentPageType: PageType.POST_LIST,
-        currentPageNumber: usedPage
-      });
-      dispatch(
-        dispatchLoadResult({
+  const loadPosts = useCallback(
+    async (page?: number) => {
+      try {
+        const usedPage = page ? page : 1;
+        setPageLoading(true);
+        setPosts([DUMMY_POST, DUMMY_POST, DUMMY_POST]);
+        const response = await PostService.loadPosts(page);
+        setPosts(response.data);
+        setLoadResult({
           currentPageType: PageType.POST_LIST,
           currentPageNumber: usedPage
-        })
-      );
-      setTotals(response);
-      setPageLoading(false);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setPageLoading(false);
-    }
-  }, []);
+        });
+        dispatch(
+          dispatchLoadResult({
+            currentPageType: PageType.POST_LIST,
+            currentPageNumber: usedPage
+          })
+        );
+        setTotals(response);
+        setPageLoading(false);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setPageLoading(false);
+      }
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
