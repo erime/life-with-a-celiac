@@ -1,15 +1,15 @@
 import { decode } from 'html-entities';
-import { IPost } from '../../App';
+import { Post } from '../../App';
 import s from './PostListItem.module.scss';
 
-interface IMyProps {
-  post: IPost;
+interface MyProps {
+  post: Post;
   align: number;
   loading: boolean;
   onClick: (url: string, slug: string) => void;
 }
 
-export function PostListItem(props: IMyProps) {
+export function PostListItem(props: MyProps) {
   const date = new Date(props.post.date).toDateString();
   const blurb = decode(
     props.post.excerpt.rendered.split('</p>')[0].replace('<p>', '')

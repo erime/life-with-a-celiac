@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { IMenuItem } from '../../App';
+import { MenuItem } from '../../App';
 import s from './Menu.module.scss';
 
-interface IMyProps {
-  menuItems: Array<IMenuItem>;
+interface MyProps {
+  menuItems: Array<MenuItem>;
   onClickItem: any;
 }
 
-export function Menu(props: IMyProps) {
+export function Menu(props: MyProps) {
   const [menuVisible, setMenuVisible] = useState<number>();
 
   const onClick = (

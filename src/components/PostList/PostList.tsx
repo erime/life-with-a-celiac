@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { IPost } from '../../App';
+import { Post } from '../../App';
+import { useAppSelector } from '../../store/hooks';
 import { PostListItem } from '../PostListItem/PostListItem';
 
-interface IMyProps {
-  posts: Array<IPost>;
+interface MyProps {
   onClickItem: (url: string, slug: string) => void;
-  loading: boolean;
   loadData: (
     lang: string | undefined,
     category: string | undefined,
@@ -15,22 +14,20 @@ interface IMyProps {
   ) => void;
 }
 
-export function PostList(props: IMyProps) {
+export function PostList(props: MyProps) {
   const { lang, category, pageNum } = useParams();
-  console.log('====PostList', lang, category, pageNum);
+  const posts = useAppSelector((state) => state.posts.posts);
+  const pageLoading = useAppSelector((state) => state.global.pageLoading);
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
   // access query parameters
   const searchString = queryParams.get('s');
-  console.log('====searchString', searchString);
 
   const onClickItem = (url: string, slug: string) => {
     props.onClickItem(url, slug);
   };
-
-  console.log('====posts', props.posts);
 
   useEffect(() => {
     props.loadData(lang, category, searchString, pageNum);
@@ -39,14 +36,14 @@ export function PostList(props: IMyProps) {
 
   return (
     <>
-      {props.posts &&
-        props.posts.map((post: IPost, index: number) => {
+      {posts &&
+        posts.map((post: Post, index: number) => {
           return (
             <PostListItem
               key={`postItem_${post.id}_${index}`}
               post={post}
               align={index % 2}
-              loading={props.loading}
+              loading={pageLoading}
               onClick={onClickItem}
             />
           );

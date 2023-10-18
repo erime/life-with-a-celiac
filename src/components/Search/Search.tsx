@@ -1,10 +1,10 @@
 import s from './Search.module.scss';
 
-interface IMyProps {
+interface MyProps {
   onSearch: any;
 }
 
-export function Search(props: IMyProps) {
+export function Search(props: MyProps) {
   const searchSubmit = (e: any) => {
     e.key === 'Enter' && props.onSearch(e.target.value);
   };

@@ -1,16 +1,15 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { IPost } from '../../App';
+import { Post } from '../../App';
+import { useAppSelector } from '../../store/hooks';
 import s from './Post.module.scss';
 import './Post.scss';
 
-interface IMyProps {
-  post: IPost | undefined;
-  loading: boolean;
+interface MyProps {
   loadData: (slug: string) => void;
 }
 
-export const DUMMY_POST: IPost = {
+export const DUMMY_POST: Post = {
   id: 0,
   date: '',
   title: {
@@ -58,9 +57,11 @@ export const DUMMY_POST: IPost = {
   }
 };
 
-export function Post(props: IMyProps) {
+export function MyPost(props: MyProps) {
   const { lang, mainCategory, slug } = useParams();
-  console.log('====lang', lang, mainCategory, slug);
+
+  const activePost = useAppSelector((state) => state.posts.activePost);
+  const pageLoading = useAppSelector((state) => state.global.pageLoading);
 
   useEffect(() => {
     slug && props.loadData(slug);
@@ -68,10 +69,10 @@ export function Post(props: IMyProps) {
   }, [lang, mainCategory, slug]);
 
   const featureImageUrl =
-    props.post?._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes[
+    activePost?._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes[
       '1536x1536'
     ]?.source_url ||
-    props.post?._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes?.full
+    activePost?._embedded['wp:featuredmedia']?.[0]?.media_details?.sizes?.full
       ?.source_url;
 
   const postLoading = (
@@ -96,21 +97,21 @@ export function Post(props: IMyProps) {
         <img
           className={s.featured_image}
           src={featureImageUrl}
-          alt={props.post?.title.rendered}
+          alt={activePost?.title.rendered}
         />
       )}
-      <h1 className={s.title}>{props.post && props.post.title.rendered}</h1>
+      <h1 className={s.title}>{activePost && activePost.title.rendered}</h1>
       <div className={s.wp_content}>
-        {props.post && (
+        {activePost && (
           <div
             className='wp'
             dangerouslySetInnerHTML={{
-              __html: props.post.content.rendered
+              __html: activePost.content.rendered
             }}
           ></div>
         )}
       </div>
     </div>
   );
-  return props.loading ? postLoading : PostLoaded;
+  return pageLoading ? postLoading : PostLoaded;
 }

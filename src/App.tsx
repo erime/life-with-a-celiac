@@ -3,19 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useCallback, useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import { useDispatch } from 'react-redux';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Menu } from './components/Menu/Menu';
 import { PageNav } from './components/PageNav/PageNav';
-import { DUMMY_POST, Post } from './components/Post/Post';
+import { DUMMY_POST, MyPost } from './components/Post/Post';
 import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
 import { Config } from './config';
 import { PostService } from './services/Posts.service';
-import { loadResult as dispatchLoadResult } from './store/postSlice';
+import { setPageLoading } from './store/globalSlice';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import {
+  loadResult as dispatchLoadResult,
+  setActivePost,
+  setPosts
+} from './store/postSlice';
 
-export interface IPost {
+export interface Post {
   id: number;
   date: string;
   title: {
@@ -63,14 +68,14 @@ export interface IPost {
   };
 }
 
-export interface IMenuItem {
+export interface MenuItem {
   ID: number;
   title: string;
   url: string;
   slug: string;
   object: string; // "category", "post"
   object_id: string; // if it's category, this is the category ID
-  child_items: Array<IMenuItem>;
+  child_items: Array<MenuItem>;
 }
 
 export enum PageType {
@@ -80,7 +85,7 @@ export enum PageType {
   SEARCH = 'search'
 }
 
-export interface ILoadResult {
+export interface LoadResult {
   currentPageType: PageType;
   categoryId?: string;
   searchString?: string;
@@ -91,34 +96,27 @@ function App() {
   const GA_TRACKING_ID = 'G-LVVQ1G3RR2';
   ReactGA.initialize(GA_TRACKING_ID);
 
-  const [posts, setPosts] = useState<Array<IPost>>([]);
-  const [activePost, setActivePost] = useState<IPost>();
   const [totalPostCount, setTotalPostCount] = useState<number | undefined>(
     undefined
   );
-  const [loadResult, setLoadResult] = useState<ILoadResult | undefined>(
-    undefined
-  );
-  const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
-  const [menu, setMenu] = useState<Array<IMenuItem>>([]);
+  const loadResult = useAppSelector((state) => state.posts.loadedResult);
 
-  const [pageLoading, setPageLoading] = useState<boolean>(false);
+  const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
+  const [menu, setMenu] = useState<Array<MenuItem>>([]);
+
+  const pageLoading = useAppSelector((state) => state.global.pageLoading);
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const loadPosts = useCallback(
     async (page?: number) => {
       try {
         const usedPage = page ? page : 1;
-        setPageLoading(true);
-        setPosts([DUMMY_POST, DUMMY_POST, DUMMY_POST]);
+        dispatch(setPageLoading(true));
+        dispatch(setPosts([DUMMY_POST, DUMMY_POST, DUMMY_POST]));
         const response = await PostService.loadPosts(page);
-        setPosts(response.data);
-        setLoadResult({
-          currentPageType: PageType.POST_LIST,
-          currentPageNumber: usedPage
-        });
+        dispatch(setPosts(response.data));
         dispatch(
           dispatchLoadResult({
             currentPageType: PageType.POST_LIST,
@@ -126,11 +124,11 @@ function App() {
           })
         );
         setTotals(response);
-        setPageLoading(false);
+        dispatch(setPageLoading(false));
       } catch (error) {
         console.error(error);
       } finally {
-        setPageLoading(false);
+        dispatch(setPageLoading(false));
       }
     },
     [dispatch]
@@ -171,7 +169,6 @@ function App() {
     searchString: string | null,
     pageNum: string | undefined
   ) => {
-    console.log('====onPostListLoad', lang, category, searchString, pageNum);
     if (!lang && !searchString && !category) {
       navigate('/ng/language/en/'); // if language is not defined, redirect
       return;
@@ -198,15 +195,11 @@ function App() {
     objectId: string,
     slug: string
   ) => {
-    console.log('====onMenuClick', url, menuType, objectId, slug);
-    //menuType === 'category' && loadCategoryPosts(objectId); // if it has a category, load posts for that category
-    //menuType !== 'category' && onPostClick(url, slug); // if it doesn't have a category, it's a post
     const route = url?.replace(Config.DOMAIN_URL, '/ng');
     route && navigate(route);
   };
 
   const onSearch = (searchString: string, page?: number) => {
-    console.log('====onSearch', searchString);
     loadSearchPosts(searchString, page);
     page && navigate(`/ng/language/en/page/${page}?s=${searchString}`);
     !page && navigate(`/ng/language/en/?s=${searchString}`);
@@ -238,52 +231,55 @@ function App() {
   async function loadCategoryPostsBySlug(slug: string, page?: number) {
     try {
       const usedPage = page ? page : 1;
-      setPageLoading(true);
+      dispatch(setPageLoading(true));
       const response = await PostService.loadCategoryBySlug(slug);
-      console.log('====category', response);
       response?.data?.[0]?.id &&
         loadCategoryPosts(response?.data?.[0]?.id, usedPage);
     } catch (error) {
       console.error(error);
-      setPageLoading(false);
+      dispatch(setPageLoading(false));
     } finally {
     }
   }
   async function loadCategoryPosts(categoryId: string, page?: number) {
     try {
       const usedPage = page ? page : 1;
-      setPageLoading(true);
+      dispatch(setPageLoading(true));
       const response = await PostService.loadCategoryPosts(categoryId, page);
-      setPosts(response.data);
-      setLoadResult({
-        currentPageType: PageType.CATEGORY,
-        categoryId: categoryId,
-        currentPageNumber: usedPage
-      });
+      dispatch(setPosts(response.data));
+      dispatch(
+        dispatchLoadResult({
+          currentPageType: PageType.CATEGORY,
+          categoryId: categoryId,
+          currentPageNumber: usedPage
+        })
+      );
       setTotals(response);
     } catch (error) {
       console.error(error);
     } finally {
-      setPageLoading(false);
+      dispatch(setPageLoading(false));
     }
   }
 
   async function loadSearchPosts(searchString: string, page?: number) {
     try {
       const usedPage = page ? page : 1;
-      setPageLoading(true);
+      dispatch(setPageLoading(true));
       const response = await PostService.loadSearchPosts(searchString, page);
-      setPosts(response.data);
-      setLoadResult({
-        currentPageType: PageType.SEARCH,
-        searchString: searchString,
-        currentPageNumber: usedPage
-      });
+      dispatch(setPosts(response.data));
+      dispatch(
+        dispatchLoadResult({
+          currentPageType: PageType.SEARCH,
+          searchString: searchString,
+          currentPageNumber: usedPage
+        })
+      );
       setTotals(response);
     } catch (error) {
       console.error(error);
     } finally {
-      setPageLoading(false);
+      dispatch(setPageLoading(false));
     }
   }
 
@@ -292,7 +288,6 @@ function App() {
       const response = await axios.get(
         'https://www.erime.eu/wp-json/menus/v1/menus/menu_en'
       );
-      console.log(response);
       setMenu(response.data.items);
     } catch (error) {
       console.error(error);
@@ -306,14 +301,21 @@ function App() {
    */
   async function loadPost(slug: string) {
     try {
-      setPageLoading(true);
+      dispatch(setPageLoading(true));
       const response = await PostService.loadPost(slug);
-      setActivePost(response.data.length > 0 ? response.data[0] : undefined);
-      setLoadResult({ currentPageType: PageType.POST, currentPageNumber: 1 });
+      dispatch(
+        setActivePost(response.data.length > 0 ? response.data[0] : undefined)
+      );
+      dispatch(
+        dispatchLoadResult({
+          currentPageType: PageType.POST,
+          currentPageNumber: 1
+        })
+      );
     } catch (error) {
       console.error(error);
     } finally {
-      setPageLoading(false);
+      dispatch(setPageLoading(false));
     }
   }
 
@@ -365,66 +367,35 @@ function App() {
           <Route
             path='/'
             element={
-              <PostList
-                posts={posts}
-                loading={pageLoading}
-                onClickItem={onPostClick}
-                loadData={onPostListLoad}
-              />
+              <PostList onClickItem={onPostClick} loadData={onPostListLoad} />
             }
           />
           <Route
             path='/ng'
             element={
-              <PostList
-                posts={posts}
-                loading={pageLoading}
-                onClickItem={onPostClick}
-                loadData={onPostListLoad}
-              />
+              <PostList onClickItem={onPostClick} loadData={onPostListLoad} />
             }
           />
           <Route
             path='/ng/language/:lang/:mainCategory/:slug/*'
-            element={
-              <Post
-                post={activePost}
-                loading={pageLoading}
-                loadData={onPostLoad}
-              />
-            }
+            element={<MyPost loadData={onPostLoad} />}
           />
           <Route
             path='/ng/language/:lang/category/recipes/diet/:category/*'
             element={
-              <PostList
-                posts={posts}
-                loading={pageLoading}
-                onClickItem={onPostClick}
-                loadData={onPostListLoad}
-              />
+              <PostList onClickItem={onPostClick} loadData={onPostListLoad} />
             }
           />
           <Route
             path='/ng/language/:lang/page/:pageNum'
             element={
-              <PostList
-                posts={posts}
-                loading={pageLoading}
-                onClickItem={onPostClick}
-                loadData={onPostListLoad}
-              />
+              <PostList onClickItem={onPostClick} loadData={onPostListLoad} />
             }
           />
           <Route
             path='/ng/language/:lang/*'
             element={
-              <PostList
-                posts={posts}
-                loading={pageLoading}
-                onClickItem={onPostClick}
-                loadData={onPostListLoad}
-              />
+              <PostList onClickItem={onPostClick} loadData={onPostListLoad} />
             }
           />
         </Routes>
