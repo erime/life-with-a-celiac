@@ -2,14 +2,14 @@ import { decode } from 'html-entities';
 import { Post } from '../../App';
 import s from './PostListItem.module.scss';
 
-interface MyProps {
+interface Props {
   post: Post;
   align: number;
   loading: boolean;
   onClick: (url: string, slug: string) => void;
 }
 
-export function PostListItem(props: MyProps) {
+export function PostListItem(props: Props) {
   const date = new Date(props.post.date).toDateString();
   const blurb = decode(
     props.post.excerpt.rendered.split('</p>')[0].replace('<p>', '')

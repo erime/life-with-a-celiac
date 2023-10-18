@@ -4,7 +4,7 @@ import { Post } from '../../App';
 import { useAppSelector } from '../../store/hooks';
 import { PostListItem } from '../PostListItem/PostListItem';
 
-interface MyProps {
+interface Props {
   onClickItem: (url: string, slug: string) => void;
   loadData: (
     lang: string | undefined,
@@ -14,7 +14,7 @@ interface MyProps {
   ) => void;
 }
 
-export function PostList(props: MyProps) {
+export function PostList(props: Props) {
   const { lang, category, pageNum } = useParams();
   const posts = useAppSelector((state) => state.posts.posts);
   const pageLoading = useAppSelector((state) => state.global.pageLoading);

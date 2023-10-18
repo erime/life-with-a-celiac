@@ -5,7 +5,7 @@ import { useAppSelector } from '../../store/hooks';
 import s from './Post.module.scss';
 import './Post.scss';
 
-interface MyProps {
+interface Props {
   loadData: (slug: string) => void;
 }
 
@@ -57,7 +57,7 @@ export const DUMMY_POST: Post = {
   }
 };
 
-export function MyPost(props: MyProps) {
+export function MyPost(props: Props) {
   const { lang, mainCategory, slug } = useParams();
 
   const activePost = useAppSelector((state) => state.posts.activePost);

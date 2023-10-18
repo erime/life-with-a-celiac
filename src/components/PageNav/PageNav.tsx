@@ -1,13 +1,13 @@
 import s from './PageNav.module.scss';
 
-interface MyProps {
+interface Props {
   pageClicked: any;
   totalPages: number;
   currentPage: number;
   totalPostCount: number;
 }
 
-export function PageNav(props: MyProps) {
+export function PageNav(props: Props) {
   return (
     <>
       {Array.apply(0, Array(props.totalPages)).map(function (x, i) {

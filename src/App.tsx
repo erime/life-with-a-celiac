@@ -104,8 +104,6 @@ function App() {
   const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
   const [menu, setMenu] = useState<Array<MenuItem>>([]);
 
-  const pageLoading = useAppSelector((state) => state.global.pageLoading);
-
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
