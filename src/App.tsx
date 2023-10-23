@@ -12,7 +12,7 @@ import { PostList } from './components/PostList/PostList';
 import { Search } from './components/Search/Search';
 import { Config } from './config';
 import { PostService } from './services/Posts.service';
-import { setPageLoading } from './store/globalSlice';
+import { setMenu, setPageLoading } from './store/globalSlice';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import {
   loadResult as dispatchLoadResult,
@@ -100,9 +100,7 @@ function App() {
     undefined
   );
   const loadResult = useAppSelector((state) => state.posts.loadedResult);
-
   const [totalPages, setTotalPages] = useState<number | undefined>(undefined);
-  const [menu, setMenu] = useState<Array<MenuItem>>([]);
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -286,7 +284,7 @@ function App() {
       const response = await axios.get(
         'https://www.erime.eu/wp-json/menus/v1/menus/menu_en'
       );
-      setMenu(response.data.items);
+      dispatch(setMenu(response.data.items));
     } catch (error) {
       console.error(error);
     }
@@ -354,7 +352,7 @@ function App() {
                 <Search onSearch={onSearch} />
               </div>
               <div className={'col-7 col-md-12 col-lg-3'}>
-                <Menu menuItems={menu} onClickItem={onMenuClick} />
+                <Menu onClickItem={onMenuClick} />
               </div>
             </div>
           </div>

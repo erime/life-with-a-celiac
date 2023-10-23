@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { MenuItem } from '../../App';
+import { useAppSelector } from '../../store/hooks';
 import s from './Menu.module.scss';
 
 interface Props {
-  menuItems: Array<MenuItem>;
   onClickItem: any;
 }
 
 export function Menu(props: Props) {
+  const menuItems = useAppSelector((state) => state.global.menu);
   const [menuVisible, setMenuVisible] = useState<number>();
 
   const onClick = (
@@ -29,7 +29,7 @@ export function Menu(props: Props) {
 
   return (
     <div className={s.menu_container}>
-      {props.menuItems.map((menuItem, index) => {
+      {menuItems.map((menuItem, index) => {
         return (
           <div
             key={`menuItem_${menuItem.object_id}`}
