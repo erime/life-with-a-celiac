@@ -132,9 +132,9 @@ function App() {
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    //loadPosts();
     loadMenus();
-  }, [loadPosts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /**
    * Post has been clicked in the list
