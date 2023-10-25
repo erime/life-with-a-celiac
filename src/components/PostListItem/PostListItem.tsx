@@ -25,7 +25,7 @@ export function PostListItem(props: Props) {
       ?.source_url;
 
   const loadingPost = (
-    <div
+    <section
       className={`${s.container} row ${
         props.align === 0 ? s.direction_reverse : ''
       }`}
@@ -44,10 +44,10 @@ export function PostListItem(props: Props) {
           <div className={s.loader_blurb}>&nbsp;</div>
         </div>
       </div>
-    </div>
+    </section>
   );
   const loadedPost = (
-    <div
+    <section
       className={`${s.container} row ${
         props.align === 0 ? s.direction_reverse : ''
       }`}
@@ -61,7 +61,7 @@ export function PostListItem(props: Props) {
         <h1 className={s.title}>{props.post.title.rendered}</h1>
         <div>{blurb}</div>
       </div>
-    </div>
+    </section>
   );
   return props.loading ? loadingPost : loadedPost;
 }

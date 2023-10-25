@@ -85,14 +85,14 @@
 @font-face {
   font-family: 'IndieFlower-Regular';
   src: local('IndieFlower-Regular'),
-    url(./fonts/IndieFlower-Regular.ttf) format('truetype');
+    url(./assets/fonts/IndieFlower-Regular.ttf) format('truetype');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Oxygen-Regular';
   src: local('Oxygen-Regular'),
-    url(./fonts/Oxygen-Regular.ttf) format('truetype');
+    url(./assets/fonts/Oxygen-Regular.ttf) format('truetype');
   font-display: swap;
 }
 

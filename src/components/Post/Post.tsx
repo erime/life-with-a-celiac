@@ -76,23 +76,23 @@ export function MyPost(props: Props) {
       ?.source_url;
 
   const postLoading = (
-    <div className={`${s.container} ${s.loader_container}`}>
+    <article className={`${s.container} ${s.loader_container}`}>
       <div className={s.featured_image}>
         <div className={s.loader_image}>&nbsp;</div>
       </div>
       <h1 className={s.title}>
         <div className={s.loader_title}>&nbsp;</div>
       </h1>
-      <div className={s.wp_content}>
+      <section className={s.wp_content}>
         <div className={s.loader_content}>&nbsp;</div>
         <div className={s.loader_content}>&nbsp;</div>
         <div className={s.loader_content}>&nbsp;</div>
         <div className={s.loader_content}>&nbsp;</div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
   const PostLoaded = (
-    <div className={s.container}>
+    <article className={s.container}>
       {featureImageUrl && (
         <img
           className={s.featured_image}
@@ -101,7 +101,7 @@ export function MyPost(props: Props) {
         />
       )}
       <h1 className={s.title}>{activePost && activePost.title.rendered}</h1>
-      <div className={s.wp_content}>
+      <section className={s.wp_content}>
         {activePost && (
           <div
             className='wp'
@@ -110,8 +110,8 @@ export function MyPost(props: Props) {
             }}
           ></div>
         )}
-      </div>
-    </div>
+      </section>
+    </article>
   );
   return pageLoading ? postLoading : PostLoaded;
 }

@@ -2,7 +2,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useCallback, useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Menu } from './components/Menu/Menu';
@@ -93,8 +92,8 @@ export interface LoadResult {
 }
 
 function App() {
-  const GA_TRACKING_ID = 'G-LVVQ1G3RR2';
-  ReactGA.initialize(GA_TRACKING_ID);
+  // const GA_TRACKING_ID = 'G-LVVQ1G3RR2';
+  // ReactGA.initialize(GA_TRACKING_ID);
 
   const [totalPostCount, setTotalPostCount] = useState<number | undefined>(
     undefined
@@ -131,7 +130,7 @@ function App() {
   );
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    // ReactGA.pageview(window.location.pathname + window.location.search);
     loadMenus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -284,7 +283,7 @@ function App() {
       const response = await axios.get(
         'https://www.erime.eu/wp-json/menus/v1/menus/menu_en'
       );
-      dispatch(setMenu(response.data.items));
+      dispatch(setMenu(response?.data?.items));
     } catch (error) {
       console.error(error);
     }
@@ -351,14 +350,14 @@ function App() {
               <div className={`col-5 col-md-4 col-lg-3`}>
                 <Search onSearch={onSearch} />
               </div>
-              <div className={'col-7 col-md-12 col-lg-3'}>
+              <nav className={'col-7 col-md-12 col-lg-3'}>
                 <Menu onClickItem={onMenuClick} />
-              </div>
+              </nav>
             </div>
           </div>
         </div>
       </header>
-      <div className='page_column'>
+      <main className='page_column'>
         <Routes>
           <Route
             path='/'
@@ -395,7 +394,7 @@ function App() {
             }
           />
         </Routes>
-      </div>
+      </main>
       <footer>
         {loadResult && totalPages && totalPostCount && (
           <PageNav
